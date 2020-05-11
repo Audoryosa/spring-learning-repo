@@ -13,8 +13,6 @@ public class AnnotationDemoMain {
 		
 		System.out.println(coach.getDailyWorkout());
 		
-		coach.setFortuneService(new BadFortune());
-		
 		System.out.println(coach.getFortune());
 		
 		context.close();

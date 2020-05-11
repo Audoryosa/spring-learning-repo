@@ -1,5 +1,8 @@
 package com.audriuskumpis;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BadFortune implements FortuneService{
 
 	@Override
