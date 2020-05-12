@@ -1,15 +1,20 @@
 package com.audriuskumpis;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationDemoMain {
 
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		// when using .xml config file
+		//ClassPathXmlApplicationContext context = new 
+		//ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		Coach coach;
+		// when using config class
+		AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext(SportConfig.class);
 		
-		coach = context.getBean("tennisCoach", Coach.class);
+		Coach coach = context.getBean("tennisCoach", Coach.class);
 		
 		System.out.println(coach.getDailyWorkout());
 		
